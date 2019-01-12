@@ -34,6 +34,17 @@ export default class Authentication extends React.Component {
     }
   }
 
+  handleConfirmationCode = () => {
+    const { email, confirmationCode } = this.state;
+    Auth.confirmSignUp(email, confirmationCode, {})
+      .then(() => {
+        this.setState({ modalVisible: false });
+        this.props.navigation.navigate('Home')
+      })
+      .catch(err => console.log(err));
+  }
+  
+
   render() {
     return (
       <View style={styles.container}>
@@ -75,8 +86,38 @@ export default class Authentication extends React.Component {
           onPress={ this.handleSignUp }
         />
         
+        <Input
+          label="Email"
+          leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+          onChangeText={
+            // Set this.state.email to the value in this Input box
+            (value) => this.setState({ email: value })
+          }
+          placeholder="my@email.com"
+        />
+        <Input
+          label="Password"
+          leftIcon={{ type: 'font-awesome', name: 'lock' }}
+          onChangeText={
+            // Set this.state.email to the value in this Input box
+            (value) => this.setState({ password: value })
+          }
+          placeholder="p@ssw0rd123"
+          secureTextEntry
+        />
+        <Text>   </Text>
+        <Button
+          title='Submit'
+          onPress={ this.handleSignIn }
+        />
+
+
+        {/* confirmation modal */}
+
         <Modal
           visible={this.state.modalVisible}
+          // empty function, to satisfy this required prop //
+          onRequestClose={()=>{}}
         >
           <View
             style={styles.container}

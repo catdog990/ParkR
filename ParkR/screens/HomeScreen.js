@@ -9,7 +9,7 @@ import {
 export default class HomeScreen extends React.Component {
   
   static navigationOptions = {
-    title: 'Home',
+    title: 'Derp',
   };
 
   render(){
