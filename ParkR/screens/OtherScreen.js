@@ -6,10 +6,10 @@ import {
 } from 'react-native';
 
 
-export default class HomeScreen extends React.Component {
-  
+export default class OtherScreen extends React.Component {
+ 
   static navigationOptions = {
-    title: 'Home',
+    title: 'Other',
   };
 
   render(){
