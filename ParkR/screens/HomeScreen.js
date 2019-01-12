@@ -9,14 +9,14 @@ import {
 export default class HomeScreen extends React.Component {
   
   static navigationOptions = {
-    title: 'Derp',
+    title: 'Home Page',
   };
 
   render(){
 
       return(
           <View style={styles.container}>
-            <Text style={styles.userInput}>Just a Test muhfucka!</Text>
+            <Text style={styles.text}>Just a Test good sir!</Text>
           </View>
             
       );
@@ -30,18 +30,15 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+  text: {
+    flex: 1, 
+    fontSize: 20,
+    paddingVertical: 30,
+  }
 
-    userInput : {
-      width:300,
-      backgroundColor: 'rgba(255, 255, 255, 0.3)',
-      borderRadius: 25,
-      paddingHorizontal: 16,
-      fontSize: 16,
-      color: 'white',
-      marginVertical: 10
-  
-    },
   
 });
