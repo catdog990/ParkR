@@ -3,7 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
+  TextInput,
+  TouchableOpacity
 } from 'react-native';
+
+
 
 
 export default class HomeScreen extends React.Component {
@@ -15,10 +19,25 @@ export default class HomeScreen extends React.Component {
   render(){
 
       return(
-          <View style={styles.container}>
-            <Text style={styles.text}>Just a Test good sir!</Text>
+          
+        <View style={styles.container}>
+
+          <View style={styles.searchContainer}>
+          
+           <TextInput 
+              style={styles.userInput}
+              placeholder='City or Town'
+              underlineColorAndroid='rgba(0,0,0,0)'
+            />
+
+
+            <TouchableOpacity onPress={() => console.log("pressed that muhfuh")}><Text style={styles.buttonStyle}>Search</Text></TouchableOpacity>
+
+
           </View>
-            
+
+         
+        </View>
       );
   
     };
@@ -28,17 +47,30 @@ export default class HomeScreen extends React.Component {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  container : {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
-  text: {
-    flex: 1, 
-    fontSize: 20,
-    paddingVertical: 30,
-  }
+  userInput : {
+    width:230,
+    fontSize: 16,
+    marginVertical: 10,
+    marginHorizontal: 10,
+    borderBottomWidth: 0.5,
+    borderColor: '#d6d7da',
+
+  },
+  searchContainer : {
+    flexDirection: 'row',
+  },
+  buttonStyle :{
+    backgroundColor: '#00bfff',
+    color: 'white',
+    fontSize: 17,
+    padding: 8,
+    borderRadius: 10,
+  },
 
   
 });
