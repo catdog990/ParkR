@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 
 
 
-export default class Header extends React.Component{
+export default class Top extends React.Component{
 
     render(){
 

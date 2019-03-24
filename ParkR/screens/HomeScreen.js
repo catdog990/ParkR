@@ -4,9 +4,10 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView
 } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card, ListItem, Button, Icon, Header } from 'react-native-elements'
 
 
 
@@ -16,16 +17,19 @@ export default class HomeScreen extends React.Component {
     title: 'Home Page',
   };
 
-  motion(){
-    
-  }
 
 
   render(){
 
       return(
           
-        <View id='derp' style={styles.container}>
+        <View  style={styles.container}>
+
+          <Header 
+            leftComponent={{ icon: 'menu', color: '#fff' }}
+            centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+            rightComponent={{ icon: 'home', color: '#fff' }}
+          />
 
           <View style={styles.searchContainer}>
           
@@ -41,7 +45,7 @@ export default class HomeScreen extends React.Component {
 
           </View>
 
-    
+        <ScrollView>
           <Card
             
             title='HELLO WORLD'
@@ -55,7 +59,36 @@ export default class HomeScreen extends React.Component {
               buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
               title='Info' />
           </Card>
-       
+
+          <Card
+            
+            title='HELLO WORLD'
+            image={require('../assets/images/derp.png')}>
+            <Text style={{marginBottom: 10}}>
+              Derpaderpapderpaderpaderpaderpaderpaderpa.
+            </Text>
+            <Button
+              icon={<Icon name='code' color='#ffffff' />}
+              backgroundColor='#03A9F4'
+              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+              title='Info' />
+          </Card>
+          
+          <Card
+            
+            title='HELLO WORLD'
+            image={require('../assets/images/derp.png')}>
+            <Text style={{marginBottom: 10}}>
+              Derpaderpapderpaderpaderpaderpaderpaderpa.
+            </Text>
+            <Button
+              icon={<Icon name='code' color='#ffffff' />}
+              backgroundColor='#03A9F4'
+              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+              title='Info' />
+          </Card>
+
+        </ScrollView>
 
          
         </View>
@@ -71,7 +104,7 @@ const styles = StyleSheet.create({
   container : {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+   
   },
   userInput : {
     width:230,
@@ -84,6 +117,7 @@ const styles = StyleSheet.create({
   },
   searchContainer : {
     flexDirection: 'row',
+    padding: 8,
   },
   buttonStyle :{
     backgroundColor: '#00bfff',
@@ -91,13 +125,6 @@ const styles = StyleSheet.create({
     fontSize: 17,
     padding: 8,
     borderRadius: 10,
-  },
-  motion : {
-    flex : 1,
-    alignItems: 'center'
-  },
-  stretch : {
-    alignItems : 'stretch'
   },
 
   
