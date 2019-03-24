@@ -6,7 +6,7 @@ import {
   TextInput,
   TouchableOpacity
 } from 'react-native';
-
+import { Card, ListItem, Button, Icon } from 'react-native-elements'
 
 
 
@@ -16,11 +16,16 @@ export default class HomeScreen extends React.Component {
     title: 'Home Page',
   };
 
+  motion(){
+    
+  }
+
+
   render(){
 
       return(
           
-        <View style={styles.container}>
+        <View id='derp' style={styles.container}>
 
           <View style={styles.searchContainer}>
           
@@ -35,6 +40,22 @@ export default class HomeScreen extends React.Component {
 
 
           </View>
+
+    
+          <Card
+            
+            title='HELLO WORLD'
+            image={require('../assets/images/derp.png')}>
+            <Text style={{marginBottom: 10}}>
+              Derpaderpapderpaderpaderpaderpaderpaderpa.
+            </Text>
+            <Button
+              icon={<Icon name='code' color='#ffffff' />}
+              backgroundColor='#03A9F4'
+              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+              title='Info' />
+          </Card>
+       
 
          
         </View>
@@ -70,6 +91,13 @@ const styles = StyleSheet.create({
     fontSize: 17,
     padding: 8,
     borderRadius: 10,
+  },
+  motion : {
+    flex : 1,
+    alignItems: 'center'
+  },
+  stretch : {
+    alignItems : 'stretch'
   },
 
   
